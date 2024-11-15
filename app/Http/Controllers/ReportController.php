@@ -51,6 +51,8 @@ class ReportController extends Controller
         ]);
 
 
+        try {
+
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $path = $image->store('images', 'public'); // Simpan di folder 'images' dalam storage/app/public
@@ -58,7 +60,7 @@ class ReportController extends Controller
             // Simpan path ke database jika perlu
             // Model::create(['image_path' => $path]);
 
-            Report::create([
+            $data = [
                 'user_id' => Auth::user()->id ?? null,
                 'rescuer' => $request->rescuer,
                 'image' => $path ?? null,
@@ -66,11 +68,16 @@ class ReportController extends Controller
                 'species' => $request->species,
                 'age' => $request->age,
                 'description' => $request->description,
-            ]);
+            ];
+
+            Report::create($data);
 
             return redirect()->route('list')->with('successMessage', 'Laporan Berhasil Dibuat');
         }
-        return "fail";
+    } catch (\Throwable $th) {
+            return redirect()->route('list')->with('errorMessage', 'Laporan Gagal Dibuat');
+        }
+
     }
 
     /**

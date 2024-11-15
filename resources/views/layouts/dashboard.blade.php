@@ -101,7 +101,7 @@
                             <ul class="submenu ">
 
                                 <li class="submenu-item  ">
-                                    <a href="extra-component-avatar.html" class="submenu-link">Daftar Hewan</a>
+                                    <a href="{{ route('list') }}" class="submenu-link">Daftar Hewan</a>
 
                                 </li>
                                 <li class="submenu-item  ">

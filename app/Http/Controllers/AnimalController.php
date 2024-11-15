@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Animal;
 use App\Http\Requests\StoreAnimalRequest;
 use App\Http\Requests\UpdateAnimalRequest;
+use App\Models\Report;
 
 class AnimalController extends Controller
 {
@@ -12,8 +13,10 @@ class AnimalController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view('pages.animals.index');
+    {   $data = Report::all();
+        return view('pages.animals.index',[
+            'data' => $data
+        ]);
     }
 
     /**
