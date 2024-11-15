@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->references('id');
-            $table->foreignId('animal_id')->constrained('animals')->onDelete('cascade')->references('id');
-            $table->date('report_date');
-            $table->text('description');
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
+            $table->string('rescuer');
+            $table->string('image');
+            $table->string('name');
+            $table->string('species');
+            $table->string('age');
+            $table->string('description');
             $table->timestamps();
         });
     }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Report;
 use App\Http\Requests\StoreReportRequest;
 use App\Http\Requests\UpdateReportRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReportController extends Controller
 {
@@ -13,7 +15,7 @@ class ReportController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.reports.index');
     }
 
     /**
@@ -27,9 +29,48 @@ class ReportController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreReportRequest $request)
+    public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'rescuer' => 'string|max:225|required',
+            'image' => 'required|mimes:jpeg,gif,svg,jpg|max:2048',
+            'name' => 'string|max:225|required',
+            'species' => 'string|max:225|required',
+            'age' => 'string|max:225|required',
+            'description' => 'string|max:225|required',
+        ],[
+            'rescuer.required' => 'Nama Harus Di Isi',
+            'image.required' => 'Harus Memasukkan Gambar',
+            'image.max' => 'Gambar tidak boleh lebih dari 2MB',
+            'image.mimes' => 'Image Harus Dengan Format jpeg, gif, svg, jpg',
+            'name.required' => 'Nama Hewan Harus Di Isi',
+            'species.required' => 'Jenis Hewan Harus Di Isi',
+            'age.required' => 'Umur Hewan Harus Di Isi',
+            'description.required' => 'Deskripsi Hewan Harus Di Isi',
+        ]);
+
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $path = $image->store('images', 'public'); // Simpan di folder 'images' dalam storage/app/public
+
+            // Simpan path ke database jika perlu
+            // Model::create(['image_path' => $path]);
+
+            Report::create([
+                'user_id' => Auth::user()->id ?? null,
+                'rescuer' => $request->rescuer,
+                'image' => $path ?? null,
+                'name' => $request->name,
+                'species' => $request->species,
+                'age' => $request->age,
+                'description' => $request->description,
+            ]);
+
+            return redirect()->route('list')->with('successMessage', 'Laporan Berhasil Dibuat');
+        }
+        return "fail";
     }
 
     /**

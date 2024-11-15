@@ -2,14 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Report extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'user_id',
-        'animal_id',
-        'report_date',
+        'rescuer',
+        'image',
+        'name',
+        'species',
+        'age',
         'description',
     ];
+
 }

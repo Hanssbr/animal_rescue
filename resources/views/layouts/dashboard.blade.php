@@ -23,7 +23,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="">
                             <a href="/home"><img src="{{ asset('image/Logo-Hewanesia.png') }}" alt="Logo"
-                                    style="width: 100%; height: auto;" srcset=""></a>
+                                    style="width: 95%; height: auto;" srcset=""></a>
                         </div>
                         <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -105,7 +105,7 @@
 
                                 </li>
                                 <li class="submenu-item  ">
-                                    <a href="extra-component-avatar.html" class="submenu-link">Buat Laporan</a>
+                                    <a href="{{ route('report') }}" class="submenu-link">Buat Laporan</a>
 
                                 </li>
 

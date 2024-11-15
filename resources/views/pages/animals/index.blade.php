@@ -4,6 +4,9 @@
 @section('page-heading', 'Daftar Hewan')
 @section('content')
     <section class="container">
+        @if (session('successMessage'))
+            <div class="alert alert-success">{{ session('successMessage') }}</div>
+        @endif
         <div class="row col-12">
             <div class="col-md-4 col-sm-12">
                 <div class="card">

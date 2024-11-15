@@ -16,3 +16,5 @@ Route::get('/daftar', function(){
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/list', [App\Http\Controllers\AnimalController::class, 'index'])->name('list');
+Route::get('/report', [App\Http\Controllers\ReportController::class, 'index'])->name('report');
+Route::post('/report', [App\Http\Controllers\ReportController::class, 'store'])->name('report.store');
