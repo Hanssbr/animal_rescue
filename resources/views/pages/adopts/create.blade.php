@@ -14,7 +14,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <form action="{{ route('adopt.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('adopt.store', $data->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <x-inputs.basic-input label="Nama Pengadopsi" id="name" name="name"
                             placeholder="Masukkan Nama Pengadopsi" />

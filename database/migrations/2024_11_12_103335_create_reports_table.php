@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
+            $table->enum('status', ['Avaible', 'Adopted', 'Rescued']);
             $table->string('rescuer');
             $table->string('image');
             $table->string('name');

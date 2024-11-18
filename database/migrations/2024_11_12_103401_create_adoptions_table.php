@@ -13,9 +13,14 @@ return new class extends Migration
     {
         Schema::create('adoptions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('animal_id')->constrained('animals')->onDelete('cascade');
-            $table->date('adoption_date');
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
+            $table->foreignId('animal_id')->nullable()->constrained('animals')->onDelete('cascade');
+            $table->string('name');
+            $table->string('email');
+            $table->string('telp');
+            $table->string('address');
+            $table->string('image');
+            $table->string('description');
             $table->timestamps();
         });
     }

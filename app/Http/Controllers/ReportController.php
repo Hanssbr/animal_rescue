@@ -23,7 +23,7 @@ class ReportController extends Controller
      */
     public function create()
     {
-        //
+        // 
     }
 
     /**
@@ -62,6 +62,7 @@ class ReportController extends Controller
 
             $data = [
                 'user_id' => Auth::user()->id ?? null,
+                'status' => 'Rescued',
                 'rescuer' => $request->rescuer,
                 'image' => $path ?? null,
                 'name' => $request->name,

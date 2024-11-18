@@ -11,6 +11,7 @@ class Report extends Model
 
     protected $fillable = [
         'user_id',
+        'status',
         'rescuer',
         'image',
         'name',

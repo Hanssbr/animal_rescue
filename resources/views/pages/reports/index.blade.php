@@ -4,7 +4,6 @@
 
 @section('content')
     <section class="container">
-        <h1>Hello</h1>
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
