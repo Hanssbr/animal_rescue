@@ -23,7 +23,7 @@ class ReportController extends Controller
      */
     public function create()
     {
-        // 
+        //
     }
 
     /**
@@ -36,7 +36,7 @@ class ReportController extends Controller
             'rescuer' => 'string|max:225|required',
             'image' => 'required|mimes:jpeg,gif,svg,jpg|max:2048',
             'name' => 'string|max:225|required',
-            'species' => 'string|max:225|required',
+            'gender' => 'string|max:225|required',
             'age' => 'string|max:225|required',
             'description' => 'string|max:225|required',
         ],[
@@ -45,7 +45,7 @@ class ReportController extends Controller
             'image.max' => 'Gambar tidak boleh lebih dari 2MB',
             'image.mimes' => 'Image Harus Dengan Format jpeg, gif, svg, jpg',
             'name.required' => 'Nama Hewan Harus Di Isi',
-            'species.required' => 'Jenis Hewan Harus Di Isi',
+            'gender.required' => 'Jenis Hewan Harus Di Isi',
             'age.required' => 'Umur Hewan Harus Di Isi',
             'description.required' => 'Deskripsi Hewan Harus Di Isi',
         ]);
@@ -66,7 +66,7 @@ class ReportController extends Controller
                 'rescuer' => $request->rescuer,
                 'image' => $path ?? null,
                 'name' => $request->name,
-                'species' => $request->species,
+                'gender' => $request->gender,
                 'age' => $request->age,
                 'description' => $request->description,
             ];

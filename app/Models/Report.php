@@ -15,7 +15,7 @@ class Report extends Model
         'rescuer',
         'image',
         'name',
-        'species',
+        'gender',
         'age',
         'description',
     ];

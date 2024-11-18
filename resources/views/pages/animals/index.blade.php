@@ -24,11 +24,17 @@
                                     @if ($report->status != 'Rescued')
                                         <div class="btn btn-danger mb-4">{{ $report->status }}</div>
                                     @else
-                                        <div class="btn btn-success mb-4">{{ $report->status }}</div>
+                                        <div class="btn btn-warning mb-4">{{ $report->status }}</div>
                                     @endif
                                 </div>
-
-                                <div class="rounded-pill btn btn-warning mb-4">{{ $report->species }}</div>
+                                @if ($report->gender == 'Male')
+                                    <div class="btn btn-primary mb-4">{{ $report->gender }}</div>
+                                @elseif ($report->gender == 'Female')
+                                    <div class="btn mb-4" style="background-color: pink; color: black">
+                                        {{ $report->gender }}</div>
+                                @else
+                                    <div class="btn btn-secondary mb-4">{{ $report->gender }}</div>
+                                @endif
                                 <p class="card-text">
                                     {{ $report->description }}
                                 </p>
@@ -36,10 +42,10 @@
                                     "Adopsi hewan ini dan beri mereka rumah penuh cinta. Yuk, adopsi sekarang!"
                                 </p>
                                 @if ($report->status != 'Adopted')
-                                    <button class="btn btn-primary block mt-4"><a class="text-decoration-none text-white"
+                                    <button class="btn btn-success block mt-4"><a class="text-decoration-none text-white"
                                             href="{{ route('adopt.create', $report->id) }}">Adopt Now</a></button>
                                 @else
-                                    <button class="btn btn-primary block mt-4" disabled><a
+                                    <button class="btn btn-secondary block mt-4" disabled><a
                                             class="text-decoration-none text-white"
                                             href="{{ route('adopt.create', $report->id) }}">Not Avaible</a></button>
                                 @endif

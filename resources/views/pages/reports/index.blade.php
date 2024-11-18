@@ -36,11 +36,12 @@
                         @error('age')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
-                        <x-inputs.basic-input label="Spesies Hewan" id="species" name="species"
-                            placeholder="Masukkan Jenis Hewan" />
-                        @error('species')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                        <label for="gender">Gender</label>
+                        <select class="form-select" id="gender" name="gender">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Unknown</option>
+                        </select>
                         <x-inputs.text-area label="Deskripsikan Hewan" id="description" name="description"
                             placeholder="Masukkan Deskripsi Hewan" rows="4" />
                         @error('description')

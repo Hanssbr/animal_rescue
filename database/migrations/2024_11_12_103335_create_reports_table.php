@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('rescuer');
             $table->string('image');
             $table->string('name');
-            $table->string('species');
+            $table->enum('gender',['Male', 'Female', 'Unknown']);
             $table->string('age');
             $table->string('description');
             $table->timestamps();
