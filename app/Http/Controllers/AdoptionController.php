@@ -9,6 +9,7 @@ use App\Models\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class AdoptionController extends Controller
 {
@@ -23,9 +24,9 @@ class AdoptionController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create($id)
+    public function create($uuid)
     {
-        $data = Report::findOrFail($id);
+        $data = Report::where('uuid', $uuid)->firstOrFail();
         return view('pages.adopts.create',[
             'data' => $data
         ]);
@@ -34,7 +35,7 @@ class AdoptionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, $id)
+    public function store(Request $request, $uuid)
     {
         $request->validate([
             'name' => 'string|max:225|required',
@@ -65,7 +66,8 @@ class AdoptionController extends Controller
             // Simpan path ke database jika perlu
             // Model::create(['image_path' => $path]);
 
-            $report = Report::where('id', $id)->first();
+            $report = Report::where('uuid', $uuid)->firstorFail();
+            $report->uuid = Str::uuid()->toString();
             $report->status = 'Adopted';
             $report->save();
 

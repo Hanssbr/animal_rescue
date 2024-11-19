@@ -30,5 +30,5 @@ Route::put('/user', [App\Http\Controllers\UserController::class, 'update'])->nam
 
 // adoption
 Route::get('/adopt', [App\Http\Controllers\AdoptionController::class, 'index'])->name('adopt');
-Route::get('/adopt/create/{id}', [App\Http\Controllers\AdoptionController::class, 'create'])->name('adopt.create');
-Route::post('/adopt/store/{id}', [App\Http\Controllers\AdoptionController::class, 'store'])->name('adopt.store');
+Route::get('/adopt/create/{uuid}', [App\Http\Controllers\AdoptionController::class, 'create'])->name('adopt.create');
+Route::post('/adopt/store/{uuid}', [App\Http\Controllers\AdoptionController::class, 'store'])->name('adopt.store');

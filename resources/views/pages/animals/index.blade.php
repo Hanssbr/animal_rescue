@@ -43,11 +43,11 @@
                                 </p>
                                 @if ($report->status != 'Adopted')
                                     <button class="btn btn-success block mt-4"><a class="text-decoration-none text-white"
-                                            href="{{ route('adopt.create', $report->id) }}">Adopt Now</a></button>
+                                            href="{{ route('adopt.create', $report->uuid) }}">Adopt Now</a></button>
                                 @else
                                     <button class="btn btn-secondary block mt-4" disabled><a
                                             class="text-decoration-none text-white"
-                                            href="{{ route('adopt.create', $report->id) }}">Not Avaible</a></button>
+                                            href="{{ route('adopt.create', $report->uuid) }}">Not Avaible</a></button>
                                 @endif
                             </div>
                         </div>

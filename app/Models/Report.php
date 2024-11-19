@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+
 
 class Report extends Model
 {
@@ -19,5 +21,14 @@ class Report extends Model
         'age',
         'description',
     ];
+
+    protected static function booted()
+    {
+        static::creating(function ($adoption) {
+            if (!$adoption->uuid) {
+                $adoption->uuid = (string) Str::uuid();
+            }
+        });
+    }
 
 }
