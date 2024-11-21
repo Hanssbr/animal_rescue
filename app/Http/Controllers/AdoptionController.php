@@ -22,6 +22,14 @@ class AdoptionController extends Controller
         return view('pages.adopts.index');
     }
 
+
+    public function admin()
+    {   $data = Adoption::all();
+        return view('pages.admins.adopt',[
+            'data' => $data,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -40,7 +48,7 @@ class AdoptionController extends Controller
     {
         $request->validate([
             'name' => 'string|max:225|required',
-            'email' => 'string|max:225|required',
+            'email' => 'string|max:225|required|email',
             'telp' => 'string|max:225|required',
             'address' => 'string|max:225|required',
             'image' => 'required|mimes:jpeg,gif,svg,jpg|max:2048',
@@ -48,6 +56,7 @@ class AdoptionController extends Controller
         ],[
             'name.required' => 'Nama Harus Di Isi',
             'email.required' => 'Email Harus Di Isi',
+            'email.email' => 'Email Tidak Valid',
             'telp.required' => 'Nomer Telepon Harus Di Isi',
             'address.required' => 'Alamat Harus Di Isi',
             'image.required' => 'Harus Memasukkan Gambar',
@@ -69,13 +78,14 @@ class AdoptionController extends Controller
 
             $animal = Animal::where('uuid', $uuid)->firstorFail();
             $animal->uuid = Str::uuid()->toString();
-            $animal->status = 'Adopted';
+            $animal->status = 'Rescued';
             $animal->save();
 
             $data = [
                 'user_id' => Auth::user()->id ?? null,
+                'animal_id' => $animal->id,
                 'name' => $request->name,
-                'email' => $request->telp,
+                'email' => $request->email,
                 'telp' => $request->telp,
                 'address' => $request->address,
                 'image' => $path ?? null,
@@ -84,20 +94,23 @@ class AdoptionController extends Controller
 
             Adoption::create($data);
             DB::commit();
-            return redirect()->route('list')->with('successMessage', 'Laporan Berhasil Dibuat');
+            return redirect()->route('list')->with('successMessage', 'Adopsi Sedang Ditinjau');
         }
-    } catch (\Exception $e) {
+    } catch (\Throwable $th) {
             DB::rollBack();
-            return redirect()->route('list')->with('errorMessage', 'Laporan Gagal Dibuat |' . $e->getMessage());
+            return redirect()->route('list')->with('errorMessage', 'Adopsi Gagal Dibuat');
         }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Adoption $adoption)
+    public function show($id)
     {
-        //
+        $data = Animal::findOrFail($id);
+        return view('pages.admins.animal',[
+            'data' => $data
+        ]);
     }
 
     /**

@@ -51,4 +51,6 @@ Route::get('/adminboard/report', [App\Http\Controllers\AdminController::class, '
 Route::get('/adminboard/review', [App\Http\Controllers\AdminController::class, 'review'])->name('animal.review');
 Route::get('/adminboard/review/{id}', [App\Http\Controllers\AdminController::class, 'addStatus'])->name('review.addStatus');
 Route::get('/adminboard/delete/{id}', [App\Http\Controllers\AdminController::class, 'delete'])->name('report.delete');
+Route::get('/adminboard/adopt', [App\Http\Controllers\AdoptionController::class, 'admin'])->name('admin.adopt');
+Route::get('/adminboard/animal/{id}', [App\Http\Controllers\AdoptionController::class, 'show'])->name('admin.show');
 });

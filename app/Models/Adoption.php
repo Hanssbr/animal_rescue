@@ -16,4 +16,9 @@ class Adoption extends Model
         'image',
         'description',
     ];
+
+    public function animal() {
+        return $this->hasOne(animal::class, 'id', 'animal_id');
+    }
+
 }

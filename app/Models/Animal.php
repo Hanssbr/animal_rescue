@@ -29,4 +29,6 @@ class Animal extends Model
             }
         });
     }
+
+    
 }

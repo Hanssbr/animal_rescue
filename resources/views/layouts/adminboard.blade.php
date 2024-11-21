@@ -95,6 +95,10 @@
                                     <a href="{{ route('report.view') }}" class="submenu-link">Daftar Laporan</a>
 
                                 </li>
+                                <li class="submenu-item  ">
+                                    <a href="{{ route('admin.adopt') }}" class="submenu-link">Daftar Adopsi</a>
+
+                                </li>
 
                             </ul>
 
