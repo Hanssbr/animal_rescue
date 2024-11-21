@@ -90,16 +90,18 @@
                                     Daftar Sekarang
                                 </a>
                             @endif
-                        @else
-                            <a href="/daftar" class="text-decoration-none text-white bg-info p-2 rounded-3">
-                                Halaman Utama
-                            </a>
-                        @endguest
+                        @elseif(Auth::user()->role === 'admin')
+                            <a href="{{ route('admin') }}"
+                                class="text-decoration-none text-white bg-info p-2 rounded-3">Halaman Utama</a>
+                        @elseif(Auth::user()->role === 'user')
+                            <a href="{{ route('home') }}"
+                                class="text-decoration-none text-white bg-info p-2 rounded-3">Halaman Utama</a>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</body>
+        </section>
+    </body>
 
-</html>
+    </html>

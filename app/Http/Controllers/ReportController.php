@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Report;
 use App\Http\Requests\StoreReportRequest;
 use App\Http\Requests\UpdateReportRequest;
+use App\Models\Animal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -62,7 +63,7 @@ class ReportController extends Controller
 
             $data = [
                 'user_id' => Auth::user()->id ?? null,
-                'status' => 'Rescued',
+                'status' => 'Pending',
                 'rescuer' => $request->rescuer,
                 'image' => $path ?? null,
                 'name' => $request->name,
@@ -71,12 +72,13 @@ class ReportController extends Controller
                 'description' => $request->description,
             ];
 
+            Animal::create($data);
             Report::create($data);
 
             return redirect()->route('list')->with('successMessage', 'Laporan Berhasil Dibuat');
         }
     } catch (\Throwable $th) {
-            return redirect()->route('list')->with('errorMessage', 'Laporan Gagal Dibuat');
+            return redirect()->route('list')->with('errorMessage', 'Laporan Gagal Dibuat'());
         }
 
     }

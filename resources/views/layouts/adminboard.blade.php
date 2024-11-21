@@ -66,7 +66,7 @@
                         <li class="sidebar-title">Menu</li>
 
                         <li class="sidebar-item active ">
-                            <a href="{{ route('home') }}" class='sidebar-link'>
+                            <a href="{{ route('admin') }}" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Home</span>
                             </a>
@@ -74,23 +74,6 @@
 
                         </li>
 
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
-                                <span>Adopsi</span>
-                            </a>
-
-                            <ul class="submenu ">
-
-                                <li class="submenu-item  ">
-                                    <a href="{{ route('animal') }}" class="submenu-link">Daftar Hewan</a>
-
-                                </li>
-
-                            </ul>
-
-
-                        </li>
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
@@ -105,20 +88,15 @@
 
                                 </li>
                                 <li class="submenu-item  ">
-                                    <a href="{{ route('report') }}" class="submenu-link">Buat Laporan</a>
+                                    <a href="{{ route('animal.review') }}" class="submenu-link">Daftar Review</a>
+
+                                </li>
+                                <li class="submenu-item  ">
+                                    <a href="{{ route('report.view') }}" class="submenu-link">Daftar Laporan</a>
 
                                 </li>
 
                             </ul>
-
-                        <li class="sidebar-item ">
-                            <a href="{{ route('user.profile') }}" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>My Profile</span>
-                            </a>
-
-
-                        </li>
 
                     </ul>
                 </div>

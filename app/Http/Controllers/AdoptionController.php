@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Adoption;
 use App\Http\Requests\StoreAdoptionRequest;
 use App\Http\Requests\UpdateAdoptionRequest;
+use App\Models\Animal;
 use App\Models\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,7 @@ class AdoptionController extends Controller
      */
     public function create($uuid)
     {
-        $data = Report::where('uuid', $uuid)->firstOrFail();
+        $data = Animal::where('uuid', $uuid)->firstOrFail();
         return view('pages.adopts.create',[
             'data' => $data
         ]);
@@ -66,10 +67,10 @@ class AdoptionController extends Controller
             // Simpan path ke database jika perlu
             // Model::create(['image_path' => $path]);
 
-            $report = Report::where('uuid', $uuid)->firstorFail();
-            $report->uuid = Str::uuid()->toString();
-            $report->status = 'Adopted';
-            $report->save();
+            $animal = Animal::where('uuid', $uuid)->firstorFail();
+            $animal->uuid = Str::uuid()->toString();
+            $animal->status = 'Adopted';
+            $animal->save();
 
             $data = [
                 'user_id' => Auth::user()->id ?? null,

@@ -35,9 +35,23 @@
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Save Changes</button>
                         </div>
-                    </form>
+                        <form method="POST" action="{{ route('logout') }}">
                 </div>
+                </form>
+                <div class="col-5">
+                    <div class="card">
+                        <form method="POST" class="d-flex justify-content-evenly align-items-center "
+                            action="{{ route('logout') }}">
+                            @csrf
+                            <button class="btn btn-danger col-10" type="submit">Logout</button>
+                        </form>
+
+                    </div>
+                </div>
+
+
             </div>
         </div>
+    </div>
     </div>
 @endsection

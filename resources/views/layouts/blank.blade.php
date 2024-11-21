@@ -8,13 +8,13 @@
     <title>Hewanesia</title>
 
 
-    <link rel="stylesheet" href="./assets/compiled/css/app.css">
-    <link rel="stylesheet" href="./assets/compiled/css/app-dark.css">
-    <link rel="stylesheet" href="./assets/compiled/css/iconly.css">
+    <link rel="stylesheet" href="{{ asset('./assets/compiled/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('./assets/compiled/css/app-dark.css') }}">
+    <link rel="stylesheet" href="{{ asset('./assets/compiled/css/iconly.css') }}">
 </head>
 
 <body>
-    <script src="assets/static/js/initTheme.js"></script>
+    <script src="{{ asset('assets/static/js/initTheme.js') }}"></script>
     <div id="app">
         <div class="page-heading">
             <h2 class="m-4 text-3xl font-extrabold">@yield('page-heading')</h2>
@@ -30,17 +30,17 @@
     <footer>
     </footer>
     </div>
-    <script src="assets/static/js/components/dark.js"></script>
-    <script src="assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="{{ asset('assets/static/js/components/dark.js') }}"></script>
+    <script src="{{ asset('assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 
 
-    <script src="assets/compiled/js/app.js"></script>
+    <script src="{{ 'assets/compiled/js/app.js' }}"></script>
 
 
 
     <!-- Need: Apexcharts -->
-    <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
-    <script src="assets/static/js/pages/dashboard.js"></script>
+    <script src="{{ asset('assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('assets/static/js/pages/dashboard.js') }}"></script>
 
 </body>
 

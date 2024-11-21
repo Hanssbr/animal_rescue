@@ -13,7 +13,7 @@ class AnimalController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   $data = Report::all();
+    {   $data = Animal::whereIn('status', ['Rescued', 'Adopted'])->get();
         return view('pages.animals.index',[
             'data' => $data
         ]);

@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->uuid('uuid')->unique();
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->string('image');
             $table->string('name');
-            $table->string('species');
+            $table->enum('gender',['Male', 'Female', 'Unknown']);
             $table->string('age');
-            $table->enum('status', ['avaible', 'adopted', 'rescued']);
+            $table->enum('status', ['Pending', 'Adopted', 'Rescued']);
+            $table->string('description');
             $table->timestamps();
         });
     }
