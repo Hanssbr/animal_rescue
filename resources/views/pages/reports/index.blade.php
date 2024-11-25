@@ -42,6 +42,14 @@
                             <option>Female</option>
                             <option>Unknown</option>
                         </select>
+                        <label for="species">Species</label>
+                        <select class="form-select" id="species" name="species">
+                            <option>Cat</option>
+                            <option>Dog</option>
+                            <option>Snake</option>
+                            <option>Lizard</option>
+                            <option>Wild</option>
+                        </select>
                         <x-inputs.text-area label="Deskripsikan Hewan" id="description" name="description"
                             placeholder="Masukkan Deskripsi Hewan" rows="4" />
                         @error('description')

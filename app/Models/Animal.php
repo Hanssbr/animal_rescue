@@ -13,6 +13,7 @@ class Animal extends Model
         'image',
         'name',
         'gender',
+        'species',
         'age',
         'status',
         'description'
@@ -30,5 +31,5 @@ class Animal extends Model
         });
     }
 
-    
+
 }

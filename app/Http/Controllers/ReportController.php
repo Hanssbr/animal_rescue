@@ -38,6 +38,7 @@ class ReportController extends Controller
             'image' => 'required|mimes:jpeg,gif,svg,jpg|max:2048',
             'name' => 'string|max:225|required',
             'gender' => 'string|max:225|required',
+            'species' => 'string|max:225|required',
             'age' => 'string|max:225|required',
             'description' => 'string|max:225|required',
         ],[
@@ -68,6 +69,7 @@ class ReportController extends Controller
                 'image' => $path ?? null,
                 'name' => $request->name,
                 'gender' => $request->gender,
+                'species' => $request->species,
                 'age' => $request->age,
                 'description' => $request->description,
             ];

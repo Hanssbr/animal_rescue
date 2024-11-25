@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('name');
             $table->enum('gender',['Male', 'Female', 'Unknown']);
+            $table->enum('species',['Cat', 'Dog', 'Lizard', 'Snake', 'Wild']);
             $table->string('age');
             $table->enum('status', ['Pending', 'Adopted', 'Rescued']);
             $table->string('description');

@@ -28,15 +28,35 @@
                                     @else
                                         <div class="btn btn-warning mb-4">{{ $review->status }}</div>
                                     @endif
+
                                 </div>
-                                @if ($review->gender == 'Male')
-                                    <div class="btn btn-primary mb-4">{{ $review->gender }}</div>
-                                @elseif ($review->gender == 'Female')
-                                    <div class="btn mb-4" style="background-color: pink; color: black">
-                                        {{ $review->gender }}</div>
-                                @else
-                                    <div class="btn btn-secondary mb-4">{{ $review->gender }}</div>
-                                @endif
+
+                                <div class="d-flex flex-row justify-content-between">
+                                    @if ($review->gender == 'Male')
+                                        <div class="btn btn-primary mb-4">{{ $review->gender }}</div>
+                                    @elseif ($review->gender == 'Female')
+                                        <div class="btn mb-4" style="background-color: pink; color: black">
+                                            {{ $review->gender }}</div>
+                                    @else
+                                        <div class="btn btn-secondary mb-4">{{ $review->gender }}</div>
+                                    @endif
+                                    @if ($review->species == 'Cat')
+                                        <div class="btn mb-4" style="background-color: orange; color: black">
+                                            {{ $review->species }}</div>
+                                    @elseif ($review->species == 'Dog')
+                                        <div class="btn mb-4" style="background-color: brown; color: white">
+                                            {{ $review->species }}</div>
+                                    @elseif ($review->species == 'Snake')
+                                        <div class="btn mb-4" style="background-color: lime; color: black">
+                                            {{ $review->species }}</div>
+                                    @elseif ($review->species == 'Lizard')
+                                        <div class="btn mb-4" style="background-color: green; color: black">
+                                            {{ $review->species }}</div>
+                                    @else
+                                        <div class="btn mb-4" style="background-color: black; color: white">
+                                            {{ $review->species }}</div>
+                                    @endif
+                                </div>
                                 <p class="card-text">
                                     {{ $review->description }}
                                 </p>

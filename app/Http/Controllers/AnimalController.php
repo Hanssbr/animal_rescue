@@ -6,6 +6,7 @@ use App\Models\Animal;
 use App\Http\Requests\StoreAnimalRequest;
 use App\Http\Requests\UpdateAnimalRequest;
 use App\Models\Report;
+use Illuminate\Http\Request;
 
 class AnimalController extends Controller
 {
@@ -22,6 +23,22 @@ class AnimalController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $data = Animal::when($query, function ($queryBuilder) use ($query) {
+            $queryBuilder->where('name', 'like', "%$query%")
+                ->orWhere('description', 'like', "%$query%")
+                ->orWhere('gender', 'like', "%$query%")
+                ->orWhere('species', 'like', "%$query%");
+        })->get();
+
+
+        return view('pages.animals.index', compact('data', 'query'));
+    }
+
+
     public function create()
     {
         //

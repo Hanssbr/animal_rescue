@@ -32,8 +32,12 @@ Route::get('/user/edit', [App\Http\Controllers\UserController::class, 'edit'])->
 Route::put('/user', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
 
 // report validation
+
+
+
 Route::get('/animal/list', [App\Http\Controllers\AnimalController::class, 'index'])->name('animal');
 
+Route::get('/animal/list/search', [App\Http\Controllers\AnimalController::class, 'search'])->name('search');
 
 
 
@@ -46,7 +50,7 @@ Route::middleware(['user'])->group(function () {
 });
 
 Route::middleware(['admin'])->group(function () {
-Route::get('/adminboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+    Route::get('/adminboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Route::get('/adminboard/report', [App\Http\Controllers\AdminController::class, 'view'])->name('report.view');
 Route::get('/adminboard/review', [App\Http\Controllers\AdminController::class, 'review'])->name('animal.review');
 Route::get('/adminboard/review/{id}', [App\Http\Controllers\AdminController::class, 'addStatus'])->name('review.addStatus');
