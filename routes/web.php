@@ -52,9 +52,22 @@ Route::middleware(['user'])->group(function () {
 Route::middleware(['admin'])->group(function () {
     Route::get('/adminboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 Route::get('/adminboard/report', [App\Http\Controllers\AdminController::class, 'view'])->name('report.view');
+
+
 Route::get('/adminboard/review', [App\Http\Controllers\AdminController::class, 'review'])->name('animal.review');
 Route::get('/adminboard/review/{id}', [App\Http\Controllers\AdminController::class, 'addStatus'])->name('review.addStatus');
 Route::get('/adminboard/delete/{id}', [App\Http\Controllers\AdminController::class, 'delete'])->name('report.delete');
+
+
+
+Route::get('/adminboard/add/{id}', [App\Http\Controllers\AdminController::class, 'animalStatus'])->name('animal.status');
+
+
+
+Route::get('/adminboard/delete/report/{id}', [App\Http\Controllers\AdoptionController::class, 'adoptionDelete'])->name('adopt.delete');
+
+
+
 Route::get('/adminboard/adopt', [App\Http\Controllers\AdoptionController::class, 'admin'])->name('admin.adopt');
 Route::get('/adminboard/animal/{id}', [App\Http\Controllers\AdoptionController::class, 'show'])->name('admin.show');
 });

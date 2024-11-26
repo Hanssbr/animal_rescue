@@ -15,6 +15,7 @@ class Adoption extends Model
         'address',
         'image',
         'description',
+        'status',
     ];
 
     public function animal() {

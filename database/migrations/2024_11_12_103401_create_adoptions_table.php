@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('image');
             $table->string('description');
+            $table->enum('status', ['pending', 'aprroved']);
             $table->timestamps();
         });
     }

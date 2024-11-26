@@ -90,6 +90,7 @@ class AdoptionController extends Controller
                 'address' => $request->address,
                 'image' => $path ?? null,
                 'description' => $request->description,
+                'status' => 'pending',
             ];
 
             Adoption::create($data);
@@ -111,6 +112,14 @@ class AdoptionController extends Controller
         return view('pages.admins.animal',[
             'data' => $data
         ]);
+    }
+
+
+    public function adoptionDelete($id) {
+    $data = Adoption::findOrFail($id);
+    $data->delete();
+
+    return redirect()->route('admin.adopt')->with('successMessage', 'Pengajuan Adopsi Berhasil Di Hapus');
     }
 
     /**

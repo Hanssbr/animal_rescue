@@ -35,7 +35,7 @@ class AdminController extends Controller
     $data->save();
 
     return redirect()->route('animal.review')->with('successMessage', 'Laporan Berhasil Di Tambahkan');
-}
+    }
 
     public function delete($id) {
     $data = Animal::findOrFail($id);
@@ -43,5 +43,15 @@ class AdminController extends Controller
 
     return redirect()->route('animal.review')->with('dangerMessage', 'Laporan Berhasil Di Hapus');
     }
+
+
+    public function animalStatus($id) {
+    $data = Animal::findOrFail($id);
+    $data->status = 'Adopted';
+    $data->save();
+
+    return redirect()->route('admin.adopt')->with('successMessage', 'Adopsi Berhasil Di Setujui');
+    }
+
 
 }

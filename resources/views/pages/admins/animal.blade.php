@@ -33,6 +33,8 @@
                         <p class="card-text pt-3">
                             "Adopsi hewan ini dan beri mereka rumah penuh cinta. Yuk, adopsi sekarang!"
                         </p>
+                        <button class="btn btn-success block mt-4"><a class="text-decoration-none text-white"
+                                href="{{ route('animal.status', $data->id) }}">Add</a></button>
                     </div>
                 </div>
             </div>
