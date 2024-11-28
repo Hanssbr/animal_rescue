@@ -6,8 +6,8 @@
         <div class="col-md-4 col-sm-12">
             <div class="card">
                 <div class="card-content">
-                    <img class="card-img-top img-fluid overflow-hidden" src="{{ asset('storage/' . $data->image) }}"
-                        alt="Card image cap" style="height: 20rem" />
+                    <img class="card-img-top img-fluid overflow-hidden" src="{{ asset($data->image) }}" alt="Card image cap"
+                        style="height: 20rem" />
                     <div class="card-body">
                         <div class="d-flex flex-row justify-content-between">
                             <h4 class="card-title text-xl pb-2 font-extrabold ">{{ $data->name }}</h4>

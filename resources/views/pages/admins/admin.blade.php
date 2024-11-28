@@ -6,22 +6,30 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h1 class="text-primary">Welcome Back Mimin</h1>
+                <h1 class="text-primary text-center">Welcome Back Mimin</h1>
                 <div class="col-12">
                     <div class="card">
-                        <div class="d-flex justify-content-evenly align-items-center col-2 mb-3">
-                            <button class="btn btn-info col-12 font-semibold" type="submit"><a href="{{ route('visitor') }}"
-                                    style="color: black; text-decoration: none;">Grafik Visitor</a></button>
+                        <!-- Flex container -->
+                        <div class="d-flex flex-column justify-content-center align-items-center gap-3 mb-3">
+                            <!-- Tombol Grafik Visitor -->
+                            <a href="{{ route('visitor') }}"
+                                class="btn btn-info col-lg-4 col-md-6 col-sm-8 mx-auto text-center font-semibold"
+                                style="color: black; text-decoration: none;">
+                                Grafik Visitor
+                            </a>
+                            <!-- Tombol Logout -->
+                            <form method="POST" action="{{ route('logout') }}" class="col-lg-4 col-md-6 col-sm-8 mx-auto">
+                                @csrf
+                                <button class="btn btn-danger w-100" type="submit">Logout</button>
+                            </form>
                         </div>
-                        <form method="POST" class="d-flex justify-content-evenly align-items-center col-2"
-                            action="{{ route('logout') }}">
-                            @csrf
-                            <button class="btn btn-danger col-12" type="submit">Logout</button>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 
 @endsection

@@ -35,7 +35,7 @@
                                         <td class="text-bold-500">{{ $adopter->telp }}</td>
                                         <td>{{ $adopter->address }}</td>
                                         <td>{{ $adopter->description }}</td>
-                                        <td><img src="{{ asset('storage/' . $adopter->image) }}" alt="..."
+                                        <td><img src="{{ asset($adopter->image) }}" alt="..."
                                                 class="col-12 row-12 img-fluid overflow-hidden"
                                                 style="max-height: 150px; object-fit: cover;" data-bs-toggle="modal"
                                                 data-bs-target="#imageModal{{ $loop->iteration }}"></td>
@@ -58,7 +58,7 @@
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-body text-center">
-                                                    <img src="{{ asset('storage/' . $adopter->image) }}" alt="..."
+                                                    <img src="{{ asset($adopter->image) }}" alt="..."
                                                         class="img-fluid">
                                                 </div>
                                             </div>

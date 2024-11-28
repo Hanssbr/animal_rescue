@@ -28,10 +28,13 @@ class AnimalController extends Controller
         $query = $request->input('query');
 
         $data = Animal::when($query, function ($queryBuilder) use ($query) {
-            $queryBuilder->where('name', 'like', "%$query%")
-                ->orWhere('description', 'like', "%$query%")
-                ->orWhere('gender', 'like', "%$query%")
-                ->orWhere('species', 'like', "%$query%");
+            $queryBuilder->where('status', '!=', 'Pending') // Filter status
+                ->where(function ($subQuery) use ($query) {
+                    $subQuery->where('name', 'like', "%$query%")
+                        ->orWhere('description', 'like', "%$query%")
+                        ->orWhere('gender', 'like', "%$query%")
+                        ->orWhere('species', 'like', "%$query%");
+                });
         })->get();
 
 

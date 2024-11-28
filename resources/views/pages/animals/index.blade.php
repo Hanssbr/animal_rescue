@@ -29,8 +29,8 @@
                 <div class="col-md-4 col-sm-12">
                     <div class="card">
                         <div class="card-content">
-                            <img class="card-img-top img-fluid overflow-hidden"
-                                src="{{ asset('storage/' . $animal->image) }}" alt="Card image cap" style="height: 20rem" />
+                            <img class="card-img-top img-fluid overflow-hidden" src="{{ asset($animal->image) }}"
+                                alt="Card image cap" style="height: 20rem" />
                             <div class="card-body">
                                 <div class="d-flex flex-row justify-content-between">
                                     <h4 class="card-title text-xl pb-2 font-extrabold ">{{ $animal->name }}</h4>
@@ -91,10 +91,11 @@
 
         </div>
         @if (Auth::user()->role === 'admin')
-            <a href="{{ route('admin') }}" class="btn btn-primary col-3 ">Kembali</a>
-        @else
-            <a href="{{ route('home') }}" class="btn btn-primary col-3 ">Kembali</a>
-        @endif
+        <a href="{{ route('admin') }}" class="btn btn-primary col-lg-3 col-md-4 col-12 mb-2">Kembali</a>
+    @else
+        <a href="{{ route('home') }}" class="btn btn-primary col-lg-3 col-md-4 col-12 mb-2">Kembali</a>
+    @endif
+
 
 
     </section>

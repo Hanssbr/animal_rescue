@@ -71,7 +71,12 @@ class AdoptionController extends Controller
             DB::beginTransaction();
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $path = $image->store('', 'public'); // Simpan langsung ke folder public/images
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('images'), $imageName);
+            $path = 'images/' . $imageName; // Path ke file yang dipindahkan
+            } else {
+            $path = null;
+            }
 
             // Simpan path ke database jika perlu
             // Model::create(['image_path' => $path]);
@@ -97,7 +102,7 @@ class AdoptionController extends Controller
             DB::commit();
             return redirect()->route('list')->with('successMessage', 'Adopsi Sedang Ditinjau');
         }
-    } catch (\Throwable $th) {
+        catch (\Throwable $th) {
             DB::rollBack();
             return redirect()->route('list')->with('errorMessage', 'Adopsi Gagal Dibuat');
         }

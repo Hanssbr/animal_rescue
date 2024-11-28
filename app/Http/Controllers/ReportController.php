@@ -57,10 +57,13 @@ class ReportController extends Controller
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $path = $image->store('', 'public'); // Simpan langsung ke folder public/images
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('images'), $imageName);
+            $path = 'images/' . $imageName; // Path ke file yang dipindahkan
+            } else {
+            $path = null;
+            }
 
-            // Simpan path ke database jika perlu
-            // Model::create(['image_path' => $path]);
 
             $data = [
                 'user_id' => Auth::user()->id ?? null,
@@ -79,8 +82,8 @@ class ReportController extends Controller
 
             return redirect()->route('list')->with('successMessage', 'Laporan Berhasil Dibuat');
         }
-    } catch (\Throwable $th) {
-            return redirect()->route('list')->with('errorMessage', 'Laporan Gagal Dibuat'());
+        catch (\Throwable $th) {
+            return redirect()->route('list')->with('errorMessage', 'Laporan Gagal Dibuat');
         }
 
     }

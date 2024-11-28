@@ -16,7 +16,7 @@
                 <div class="col-md-4 col-sm-12">
                     <div class="card">
                         <div class="card-content">
-                            <img class="card-img-top img-fluid overflow-hidden" src="{{ asset('storage/' . $report->image) }}"
+                            <img class="card-img-top img-fluid overflow-hidden" src="{{ asset($report->image) }}"
                                 alt="Card image cap" style="height: 20rem" />
                             <div class="card-body">
                                 <div class="d-flex flex-row justify-content-between">
@@ -43,9 +43,9 @@
             @endforeach
         </div>
         @if (Auth::user()->role === 'admin')
-            <a href="{{ route('admin') }}" class="btn btn-primary col-3 ">Kembali</a>
+            <a href="{{ route('admin') }}" class="btn btn-primary col-lg-3 col-md-4 col-12 mb-2">Kembali</a>
         @else
-            <a href="{{ route('home') }}" class="btn btn-primary col-3 ">Kembali</a>
+            <a href="{{ route('home') }}" class="btn btn-primary col-lg-3 col-md-4 col-12 mb-2">Kembali</a>
         @endif
 
 
