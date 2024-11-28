@@ -18,7 +18,7 @@ Route::get('/daftar', function(){
 });
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('log.visitor');
 // animal list
 Route::get('/list', [App\Http\Controllers\AnimalController::class, 'index'])->name('list');
 
@@ -70,4 +70,6 @@ Route::get('/adminboard/delete/report/{id}', [App\Http\Controllers\AdoptionContr
 
 Route::get('/adminboard/adopt', [App\Http\Controllers\AdoptionController::class, 'admin'])->name('admin.adopt');
 Route::get('/adminboard/animal/{id}', [App\Http\Controllers\AdoptionController::class, 'show'])->name('admin.show');
+Route::get('/adminboard/visitor', [App\Http\Controllers\VisitorController::class, 'index'])->name('visitor');
+
 });

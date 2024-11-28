@@ -71,7 +71,7 @@ class AdoptionController extends Controller
             DB::beginTransaction();
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $path = $image->store('images', 'public'); // Simpan di folder 'images' dalam storage/app/public
+            $path = $image->store('', 'public'); // Simpan langsung ke folder public/images
 
             // Simpan path ke database jika perlu
             // Model::create(['image_path' => $path]);
