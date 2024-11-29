@@ -73,29 +73,33 @@
     <section>
         <div class="landing-page d-flex flex-row justify-content-center align-items-center flex-nowrap mt-4"
             style="height: 40rem; width: 100%">
-            <div
-                class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-evenly gap-10 align-items-center flex-nowrap">
+            <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-evenly gap-10 align-items-center flex-nowrap"
+                style="margin-top: 5rem;"> <!-- Menambahkan margin-top untuk seluruh container -->
                 <div class="cat-image mt-0">
-                    <img src="{{ asset('image/kuching withoutbg finish.png') }}" alt="kuching">
+                    <img src="{{ asset('image/kuching withoutbg finish.png') }}" alt="kuching" class="img-fluid">
                 </div>
-                <div class="title col-7 col-md-4 " style="margin-top: 4rem">
+                <div class="title col-7 col-md-4 text-center"> <!-- Tambahkan text-center untuk teks -->
                     <h1 class="text-center text-info">Hewanesia</h1>
                     <p>"Ketika Anda mengadopsi, Anda tidak hanya memberi tempat untuk hewan tinggal, tetapi juga
                         menciptakan ikatan penuh kehangatan yang akan bertahan seumur hidup."</p>
-                    <div class="mt-4">
+                    <div class="mt-4 d-flex flex-column justify-content-center align-items-center">
                         @guest
-
                             @if (Route::has('login'))
-                                <a href="/daftar" class="text-decoration-none text-white bg-info p-2 rounded-3">
+                                <a href="/daftar"
+                                    class="text-decoration-none text-white bg-info p-2 rounded-3 d-inline-block mb-4">
                                     Daftar Sekarang
                                 </a>
                             @endif
                         @elseif(Auth::user()->role === 'admin')
                             <a href="{{ route('admin') }}"
-                                class="text-decoration-none text-white bg-info p-2 rounded-3">Halaman Utama</a>
+                                class="text-decoration-none text-white bg-info p-2 rounded-3 d-inline-block">
+                                Halaman Utama
+                            </a>
                         @elseif(Auth::user()->role === 'user')
                             <a href="{{ route('home') }}"
-                                class="text-decoration-none text-white bg-info p-2 rounded-3">Halaman Utama</a>
+                                class="text-decoration-none text-white bg-info p-2 rounded-3 d-inline-block">
+                                Halaman Utama
+                            </a>
                             @endif
                         </div>
                     </div>
