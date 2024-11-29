@@ -6,6 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h1 class="text-primary text-center">Welcome Back Mimin</h1>
+                <h2>Halo cuman coba coba sih</h2>
                 <div class="col-12">
                     <div class="card">
                         <!-- Flex container -->
