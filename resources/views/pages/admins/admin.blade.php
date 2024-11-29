@@ -5,7 +5,7 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h1 class="text-primary text-center">Welcome Back Mimin Ganteng</h1>
+                <h1 class="text-primary text-center">Welcome Back Mimin</h1>
                 <div class="col-12">
                     <div class="card">
                         <!-- Flex container -->
