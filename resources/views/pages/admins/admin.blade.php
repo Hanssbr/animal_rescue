@@ -1,6 +1,5 @@
 @extends('layouts.adminboard')
 
-@section('page-heading', 'Welcome Admin')
 @section('content')
 
     <div class="container">
