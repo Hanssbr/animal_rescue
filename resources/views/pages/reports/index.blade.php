@@ -38,12 +38,14 @@
                         @enderror
                         <label for="gender">Gender</label>
                         <select class="form-select" id="gender" name="gender">
+                            <option value="" selected disabled>Pilih Gender</option>
                             <option>Male</option>
                             <option>Female</option>
                             <option>Unknown</option>
                         </select>
                         <label for="species">Species</label>
                         <select class="form-select" id="species" name="species">
+                            <option value="" selected disabled>Pilih Species</option>
                             <option>Cat</option>
                             <option>Dog</option>
                             <option>Snake</option>
