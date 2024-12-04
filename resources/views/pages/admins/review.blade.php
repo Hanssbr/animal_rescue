@@ -22,38 +22,38 @@
                                 <div class="d-flex flex-row justify-content-between">
                                     <h4 class="card-title text-xl pb-2 font-extrabold ">{{ $review->name }}</h4>
                                     @if ($review->status != 'Rescued')
-                                        <div class="btn btn-danger mb-4">{{ $review->status }}</div>
+                                        <div class="badge bg-danger mb-4">{{ $review->status }}</div>
                                     @elseif ($review->status != 'Adopted')
-                                        <div class="btn btn-warning mb-4">{{ $review->status }}</div>
+                                        <div class="badge bg-warning mb-4">{{ $review->status }}</div>
                                     @else
-                                        <div class="btn btn-warning mb-4">{{ $review->status }}</div>
+                                        <div class="badge bg-warning mb-4">{{ $review->status }}</div>
                                     @endif
 
                                 </div>
 
                                 <div class="d-flex flex-row justify-content-between">
                                     @if ($review->gender == 'Male')
-                                        <div class="btn btn-primary mb-4">{{ $review->gender }}</div>
+                                        <div class="badge bg-primary mb-4">{{ $review->gender }}</div>
                                     @elseif ($review->gender == 'Female')
-                                        <div class="btn mb-4" style="background-color: pink; color: black">
+                                        <div class="badge mb-4" style="background-color: pink; color: black">
                                             {{ $review->gender }}</div>
                                     @else
-                                        <div class="btn btn-secondary mb-4">{{ $review->gender }}</div>
+                                        <div class="badge bg-secondary mb-4">{{ $review->gender }}</div>
                                     @endif
                                     @if ($review->species == 'Cat')
-                                        <div class="btn mb-4" style="background-color: orange; color: black">
+                                        <div class="badge mb-4" style="background-color: orange; color: black">
                                             {{ $review->species }}</div>
                                     @elseif ($review->species == 'Dog')
-                                        <div class="btn mb-4" style="background-color: brown; color: white">
+                                        <div class="badge mb-4" style="background-color: brown; color: white">
                                             {{ $review->species }}</div>
                                     @elseif ($review->species == 'Snake')
-                                        <div class="btn mb-4" style="background-color: lime; color: black">
+                                        <div class="badge mb-4" style="background-color: lime; color: black">
                                             {{ $review->species }}</div>
                                     @elseif ($review->species == 'Lizard')
-                                        <div class="btn mb-4" style="background-color: green; color: black">
+                                        <div class="badge mb-4" style="background-color: green; color: black">
                                             {{ $review->species }}</div>
                                     @else
-                                        <div class="btn mb-4" style="background-color: black; color: white">
+                                        <div class="badge mb-4" style="background-color: black; color: white">
                                             {{ $review->species }}</div>
                                     @endif
                                 </div>
