@@ -35,37 +35,37 @@
                                 <div class="d-flex flex-row justify-content-between">
                                     <h4 class="card-title text-xl pb-2 font-extrabold ">{{ $animal->name }}</h4>
                                     @if ($animal->status != 'Rescued')
-                                        <div class="btn btn-danger mb-4">{{ $animal->status }}</div>
+                                        <div class="badge bg-danger mb-4">{{ $animal->status }}</div>
                                     @elseif ($animal->status != 'Adopted')
-                                        <div class="btn btn-warning mb-4">{{ $animal->status }}</div>
+                                        <div class="badge bg-warning mb-4">{{ $animal->status }}</div>
                                     @else
-                                        <div class="btn btn-warning mb-4">{{ $animal->status }}</div>
+                                        <div class="badge bg-warning mb-4">{{ $animal->status }}</div>
                                     @endif
                                 </div>
                                 @if ($animal->gender == 'Male')
-                                    <div class="btn btn-primary mb-4">{{ $animal->gender }}</div>
+                                    <div class="badge bg-primary mb-4">{{ $animal->gender }}</div>
                                 @elseif ($animal->gender == 'Female')
-                                    <div class="btn mb-4" style="background-color: pink; color: black">
+                                    <div class="badge mb-4" style="background-color: pink; color: black">
                                         {{ $animal->gender }}</div>
                                 @else
-                                    <div class="btn btn-secondary mb-4">{{ $animal->gender }}</div>
+                                    <div class="badge bg-secondary mb-4">{{ $animal->gender }}</div>
                                 @endif
 
 
                                 @if ($animal->species == 'Cat')
-                                    <div class="btn mb-4" style="background-color: orange; color: black">
+                                    <div class="badge mb-4" style="background-color: orange; color: black">
                                         {{ $animal->species }}</div>
                                 @elseif ($animal->species == 'Dog')
-                                    <div class="btn mb-4" style="background-color: brown; color: white">
+                                    <div class="badge mb-4" style="background-color: brown; color: white">
                                         {{ $animal->species }}</div>
                                 @elseif ($animal->species == 'Snake')
-                                    <div class="btn mb-4" style="background-color: lime; color: black">
+                                    <div class="badge mb-4" style="background-color: lime; color: black">
                                         {{ $animal->species }}</div>
                                 @elseif ($animal->species == 'Lizard')
-                                    <div class="btn mb-4" style="background-color: green; color: black">
+                                    <div class="badge mb-4" style="background-color: green; color: black">
                                         {{ $animal->species }}</div>
                                 @else
-                                    <div class="btn mb-4" style="background-color: black; color: white">
+                                    <div class="badge mb-4" style="background-color: black; color: white">
                                         {{ $animal->species }}</div>
                                 @endif
                                 <p class="card-text">
