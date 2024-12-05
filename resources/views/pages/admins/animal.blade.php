@@ -12,20 +12,20 @@
                         <div class="d-flex flex-row justify-content-between">
                             <h4 class="card-title text-xl pb-2 font-extrabold ">{{ $data->name }}</h4>
                             @if ($data->status != 'Rescued')
-                                <div class="btn btn-danger mb-4">{{ $data->status }}</div>
+                                <div class="badge bg-danger mb-4">{{ $data->status }}</div>
                             @elseif ($data->status != 'Adopted')
-                                <div class="btn btn-warning mb-4">{{ $data->status }}</div>
+                                <div class="badge bg-warning mb-4">{{ $data->status }}</div>
                             @else
-                                <div class="btn btn-warning mb-4">{{ $data->status }}</div>
+                                <div class="badge bg-warning mb-4">{{ $data->status }}</div>
                             @endif
                         </div>
                         @if ($data->gender == 'Male')
-                            <div class="btn btn-primary mb-4">{{ $data->gender }}</div>
+                            <div class="badge bg-primary mb-4">{{ $data->gender }}</div>
                         @elseif ($data->gender == 'Female')
-                            <div class="btn mb-4" style="background-color: pink; color: black">
+                            <div class="badge mb-4" style="background-color: pink; color: black">
                                 {{ $data->gender }}</div>
                         @else
-                            <div class="btn btn-secondary mb-4">{{ $data->gender }}</div>
+                            <div class="badge bg-secondary mb-4">{{ $data->gender }}</div>
                         @endif
                         <p class="card-text">
                             {{ $data->description }}
