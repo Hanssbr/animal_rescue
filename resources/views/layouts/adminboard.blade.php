@@ -82,11 +82,6 @@
                             </a>
 
                             <ul class="submenu ">
-
-                                <li class="submenu-item  ">
-                                    <a href="{{ route('animal') }}" class="submenu-link">Daftar Hewan</a>
-
-                                </li>
                                 <li class="submenu-item  ">
                                     <a href="{{ route('animal.review') }}" class="submenu-link">Daftar Review</a>
 
