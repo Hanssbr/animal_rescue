@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.horizontal')
 
 
 @section('page-heading', 'Daftar Hewan')
@@ -21,10 +21,10 @@
             </div>
         </form>
         <div class="row">
+            @if ($empty)
+                <p>Hasil Tidak ditemukan</p>
+            @endif
 
-            {{-- @if ($results->isEmpty()) --}}
-            <p class="text-gray-500">Tidak Ada Hasil Yang Ditemukan.</p>
-            {{-- @else --}}
             @foreach ($data as $animal)
                 <div class="col-md-4 col-sm-12">
                     <div class="card">
@@ -87,14 +87,13 @@
                     </div>
                 </div>
             @endforeach
-            {{-- @endif --}}
 
         </div>
         @if (Auth::user()->role === 'admin')
-        <a href="{{ route('admin') }}" class="btn btn-primary col-lg-3 col-md-4 col-12 mb-2">Kembali</a>
-    @else
-        <a href="{{ route('home') }}" class="btn btn-primary col-lg-3 col-md-4 col-12 mb-2">Kembali</a>
-    @endif
+            <a href="{{ route('admin') }}" class="btn btn-primary col-lg-3 col-md-4 col-12 mb-2">Kembali</a>
+        @else
+            <a href="{{ route('home') }}" class="btn btn-primary col-lg-3 col-md-4 col-12 mb-2">Kembali</a>
+        @endif
 
 
 

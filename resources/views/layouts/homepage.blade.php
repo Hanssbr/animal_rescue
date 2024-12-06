@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.horizontal')
 
 @section('page-heading', 'Selamat Datang di Hewanesia')
 @section('content')
@@ -33,13 +33,22 @@
                             serta kebutuhan perawatan.</li>
                     </ul>
                 </div>
-                <div>
+                <div class="mb-4">
                     <h5 class="fs-6 fs-md-5">Fitur Laporan Hewan Terlantar</h5>
                     <ul>
                         <li>Pengunjung dapat melaporkan hewan yang ditemukan terlantar atau membutuhkan pertolongan melalui
                             formulir laporan.</li>
                         <li>Laporan akan diteruskan ke tim penyelamatan atau relawan untuk tindak lanjut dan perlindungan
                             hewan.</li>
+                    </ul>
+                </div>
+                <div class="mb-4">
+                    <h5 class="fs-6 fs-md-5">Fitur Adopsi Hewan Terlantar</h5>
+                    <ul>
+                        <li>Pengunjung dapat mengadopsi hewan yang sudah di rescue oleh pengunjung lain dengan mengisi
+                            formulir yang tersedia.</li>
+                        <li>Permintaan adopsi akan diteruskan ke admin untuk tindak lanjut atas formulir yang dikirimkan.
+                        </li>
                     </ul>
                 </div>
             </div>

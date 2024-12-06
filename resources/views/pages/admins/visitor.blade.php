@@ -1,4 +1,4 @@
-@extends('layouts.adminboard')
+@extends('layouts.blank')
 
 @section('page-heading', 'Visitors')
 @section('content')
@@ -69,7 +69,11 @@
                 });
             };
         </script>
-
+        @if (Auth::user()->role === 'admin')
+            <a href="{{ route('admin') }}" class="btn btn-primary col-lg-3 col-md-4 col-12 mb-2">Kembali</a>
+        @else
+            <a href="{{ route('home') }}" class="btn btn-primary col-lg-3 col-md-4 col-12 mb-2">Kembali</a>
+        @endif
     </body>
 
     </html>

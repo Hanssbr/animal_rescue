@@ -37,8 +37,10 @@ class AnimalController extends Controller
                 });
         })->get();
 
+        $empty = $data->isEmpty();
 
-        return view('pages.animals.index', compact('data', 'query'));
+
+        return view('pages.animals.index', compact('data', 'query', 'empty'));
     }
 
 

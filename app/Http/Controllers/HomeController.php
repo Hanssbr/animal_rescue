@@ -28,4 +28,12 @@ class HomeController extends Controller
         ]);
 
     }
+
+    public function view()
+    {
+        
+        return view('layouts.horizontal', [
+        ]);
+
+    }
 }

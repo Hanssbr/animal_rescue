@@ -1,4 +1,4 @@
-@extends('layouts.adminboard')
+@extends('layouts.horizontal')
 
 @section('page-heading', 'Biodata Hewan Yang Di Adopsi')
 @section('content')
@@ -34,7 +34,7 @@
                             "Adopsi hewan ini dan beri mereka rumah penuh cinta. Yuk, adopsi sekarang!"
                         </p>
                         <button class="btn btn-success block mt-4"><a class="text-decoration-none text-white"
-                                href="{{ route('animal.status', $data->id) }}">Add</a></button>
+                                href="{{ route('animal.status', $data->id) }}">Approve</a></button>
                     </div>
                 </div>
             </div>

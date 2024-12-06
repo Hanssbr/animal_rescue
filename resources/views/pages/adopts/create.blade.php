@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.horizontal')
 @section('page-heading', 'Form Adopsi')
 
 
