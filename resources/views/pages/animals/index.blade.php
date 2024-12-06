@@ -1,4 +1,4 @@
-@extends('layouts.blank')
+@extends('layouts.dashboard')
 
 
 @section('page-heading', 'Daftar Hewan')
