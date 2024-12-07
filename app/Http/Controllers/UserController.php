@@ -34,7 +34,7 @@ class UserController extends Controller
             'name' => 'nullable|string|max:225',
             'email' => 'nullable|email|unique:users,email,' . $user->id,
             'telp' => 'nullable|string|max:225',
-            'password' => 'nullable|string|max:225',
+            'password' => 'nullable|string|max:225|confirmed',
         ]);
 
         try {
@@ -42,6 +42,11 @@ class UserController extends Controller
         $user->email = $validatedData ['email'];
         $user->telp = $validatedData ['telp'];
 
+
+        if (!empty($validatedData['password'])) {
+            $user->password = bcrypt($validatedData['password']);
+        }
+        
         $user->save();
 
         return redirect()->route('user.profile')->with('successMessage', 'Profile Berhasil Di Update');

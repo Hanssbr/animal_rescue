@@ -31,6 +31,15 @@
                             <input type="text" name="telp" id="telp" class="form-control"
                                 placeholder="Your Phone" value="{{ Auth::user()->telp }}" required>
                         </div>
+                        <div class="form-group">
+                            <label for="telp" class="form-label">New Password</label>
+                                <input type="password" name="password" placeholder="Password Baru" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="telp" class="form-label">Confirm New Password</label>
+                            <input type="password" name="password_confirmation" placeholder="Konfirmasi Password Baru"
+                                class="form-control">
+                        </div>
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Save Changes</button>
