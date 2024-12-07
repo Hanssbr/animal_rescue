@@ -25,7 +25,7 @@ class AnimalController extends Controller
      */
     public function search(Request $request)
     {
-        $query = $request->input('query');
+        $query = $request->input('query', '');
 
         $data = Animal::when($query, function ($queryBuilder) use ($query) {
             $queryBuilder->where('status', '!=', 'Pending') // Filter status
@@ -37,7 +37,7 @@ class AnimalController extends Controller
                 });
         })->get();
 
-        $empty = $data->isEmpty();
+        $empty = $query && $data->isEmpty();
 
 
         return view('pages.animals.index', compact('data', 'query', 'empty'));

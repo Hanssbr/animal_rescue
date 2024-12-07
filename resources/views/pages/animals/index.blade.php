@@ -20,10 +20,10 @@
                 </div>
             </div>
         </form>
+        @if (!empty($query) && !empty($empty) && $empty)
+            <p class="text-danger">Hasil pencarian tidak ditemukan.</p>
+        @endif
         <div class="row">
-            @if ($empty)
-                <p>Hasil Tidak ditemukan</p>
-            @endif
 
             @foreach ($data as $animal)
                 <div class="col-md-4 col-sm-12">
