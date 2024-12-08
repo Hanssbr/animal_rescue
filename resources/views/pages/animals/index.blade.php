@@ -74,7 +74,7 @@
                                     <div class="badge mb-4" style="background-color: lime; color: black">
                                         {{ $animal->species }}</div>
                                 @elseif ($animal->species == 'Bird')
-                                    <div class="badge mb-4" style="background-color: green; color: black">
+                                    <div class="badge mb-4" style="background-color: green; color: white">
                                         {{ $animal->species }}</div>
                                 @else
                                     <div class="badge mb-4" style="background-color: black; color: white">
