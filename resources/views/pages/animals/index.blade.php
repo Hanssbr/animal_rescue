@@ -64,6 +64,18 @@
                                 @elseif ($animal->species == 'Lizard')
                                     <div class="badge mb-4" style="background-color: green; color: black">
                                         {{ $animal->species }}</div>
+                                @if ($animal->species == 'Rabbit')
+                                    <div class="badge mb-4" style="background-color: orange; color: black">
+                                        {{ $animal->species }}</div>
+                                @elseif ($animal->species == 'Bird')
+                                    <div class="badge mb-4" style="background-color: brown; color: white">
+                                        {{ $animal->species }}</div>
+                                @elseif ($animal->species == 'Hamster')
+                                    <div class="badge mb-4" style="background-color: lime; color: black">
+                                        {{ $animal->species }}</div>
+                                @elseif ($animal->species == 'Other')
+                                    <div class="badge mb-4" style="background-color: green; color: black">
+                                        {{ $animal->species }}</div>
                                 @else
                                     <div class="badge mb-4" style="background-color: black; color: white">
                                         {{ $animal->species }}</div>

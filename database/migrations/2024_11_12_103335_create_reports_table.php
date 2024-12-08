@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('name');
             $table->enum('gender',['Male', 'Female', 'Unknown']);
-            $table->enum('species',['Cat', 'Dog', 'Lizard', 'Snake', 'Wild']);
+            $table->enum('species',['Cat', 'Dog', 'Rabbit', 'Hamster', 'Bird', 'Lizard', 'Snake', 'Wild', 'Other']);
             $table->string('age');
             $table->string('description');
             $table->timestamps();

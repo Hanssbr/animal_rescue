@@ -48,9 +48,13 @@
                             <option value="" selected disabled>Pilih Species</option>
                             <option>Cat</option>
                             <option>Dog</option>
+                            <option>Rabbit</option>
+                            <option>Hamster</option>
+                            <option>Bird</option>
                             <option>Snake</option>
                             <option>Lizard</option>
                             <option>Wild</option>
+                            <option>Other</option>
                         </select>
                         <x-inputs.text-area label="Deskripsikan Hewan" id="description" name="description"
                             placeholder="Masukkan Deskripsi Hewan" rows="4" />
