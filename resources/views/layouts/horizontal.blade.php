@@ -38,7 +38,7 @@
                             }
                         </style>
                         <div class="logo">
-                            <a href="/home"><img src="{{ asset('image/Logo-Hewanesia.png') }}" alt="Logo"
+                            <a href="#"><img src="{{ asset('image/Logo-Hewanesia.png') }}" alt="Logo"
                                     class="responsive.logo"></a>
                         </div>
                         <div class="dropdown">
